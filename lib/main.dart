@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -19,14 +19,15 @@ class MyApp extends StatelessWidget {
           title: Text("ยินดีต้อนรับ"),
         ),
         body: Center(
-            // child: Text(
-            //   "พีรพัฒน์ ตั้งปัญญาไว",
-            //   style: TextStyle(fontSize: 30, color: Colors.red),
-            // ),
-            child: Image(
-              image: NetworkImage(
-                  "https://cdn.pixabay.com/photo/2023/05/19/13/28/bird-8004544_1280.jpg"),
-            )),
+            //Colum Widget
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround, //กำหนดตำแหน่งข้อความ
+          children: [
+            Text("พีรพัฒน์"),
+            Text("ตั้งปัญญาไว"),
+            Text("Flutter Basic")
+          ],
+        )),
       ),
       theme: ThemeData(primarySwatch: Colors.green),
     );
