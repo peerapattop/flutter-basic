@@ -33,15 +33,17 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              number++;
-            });
-          },
+          onPressed: addNumber,
           child: Icon(Icons.add),
         ),
       ),
       theme: ThemeData(primarySwatch: Colors.green),
     );
+  }
+
+  void addNumber() { //ฟังก์ชั่น
+    setState(() {
+      number++;
+    });
   }
 }
