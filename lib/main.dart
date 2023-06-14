@@ -1,15 +1,16 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-//สร้าง Widget ด้วย StatelessWidget
-class MyApp extends StatelessWidget {
-  int number = 0; //สร้าง state
-  // const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int number = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,21 +21,23 @@ class MyApp extends StatelessWidget {
           title: Text("ยินดีต้อนรับ"),
         ),
         body: Center(
-            //Colum Widget
-            child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.spaceAround, //กำหนดตำแหน่งข้อความ
-          children: [
-            Text("กดปุ่มเพื่อเพิ่มตัวเลข"),
-            Text(
-              "$number",
-              style: TextStyle(fontSize: 60),
-            )
-          ],
-        )
-      ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("กดปุ่มเพื่อเพิ่มตัวเลข"),
+              Text(
+                "$number",
+                style: TextStyle(fontSize: 60),
+              ),
+            ],
+          ),
+        ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              number++;
+            });
+          },
           child: Icon(Icons.add),
         ),
       ),
