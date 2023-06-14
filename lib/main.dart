@@ -8,7 +8,8 @@ void main() {
 
 //สร้าง Widget ด้วย StatelessWidget
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  int number = 0; //สร้าง state
+  // const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +22,21 @@ class MyApp extends StatelessWidget {
         body: Center(
             //Colum Widget
             child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround, //กำหนดตำแหน่งข้อความ
+          mainAxisAlignment:
+              MainAxisAlignment.spaceAround, //กำหนดตำแหน่งข้อความ
           children: [
-            Text("พีรพัฒน์"),
-            Text("ตั้งปัญญาไว"),
-            Text("Flutter Basic")
+            Text("กดปุ่มเพื่อเพิ่มตัวเลข"),
+            Text(
+              "$number",
+              style: TextStyle(fontSize: 60),
+            )
           ],
-        )),
+        )
+      ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.add),
+        ),
       ),
       theme: ThemeData(primarySwatch: Colors.green),
     );
