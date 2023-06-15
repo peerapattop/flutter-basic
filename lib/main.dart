@@ -14,6 +14,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> data = []; //กำหนดกลุ่ม Widget ใน List
+  data.add(Text("กดปุ่มเพื่อเพิ่มจำนวนตัวเลข"));
+  data.add(Text(number.toString(),style: TextStyle(fontSize: 60)));
+
     return MaterialApp(
       title: "My App",
       home: Scaffold(
@@ -23,13 +27,7 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("กดปุ่มเพื่อเพิ่มตัวเลข"),
-              Text(
-                "$number",
-                style: TextStyle(fontSize: 60),
-              ),
-            ],
+            children: data,
           ),
         ),
         floatingActionButton: FloatingActionButton(
